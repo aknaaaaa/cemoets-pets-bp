@@ -1,6 +1,4 @@
-"use client";
-
-import image from "../image/Koy1.jpg";
+import image from "../image/Koy2.jpg";
 import Image from "next/image";
 import Link from "next/link";
 
@@ -8,9 +6,19 @@ export default function SignIn() {
   return (
     <section className="min-h-screen flex items-center justify-center font-poppins bg-sky-200 p-4">
       <div className="flex flex-col xl:flex-row shadow-2xl w-full max-w-6xl rounded-2xl overflow-hidden">
+        {/*IMAGE */}
+        <div className="relative hidden xl:block w-full xl:w-1/2">
+          <Image
+            src={image}
+            alt="Login Illustration"
+            fill
+            className="object-cover xl:rounded-tl-2xl xl:rounded-bl-2xl"
+          />
+        </div>
+
         {/* FORM */}
         <div className="flex flex-col items-center justify-center text-center p-8 md:p-12 xl:p-20 gap-8 bg-white w-full xl:w-1/2">
-          <h1 className="text-4xl md:text-5xl font-bold">Sign In</h1>
+          <h1 className="text-4xl md:text-5xl font-bold">Sign Up</h1>
 
           {/* ... input dan tombol ... */}
           <div className="flex flex-col text-lg md:text-2xl text-left gap-1 w-full">
@@ -36,21 +44,11 @@ export default function SignIn() {
           </button>
 
           <p className="font-semibold text-sm md:text-base">
-            Don't have an account?{" "}
-            <Link href="/Register" className="text-sky-600 hover:underline">
-              Register Now!
+            Already have an account?{" "}
+            <Link href="/Login" className="text-sky-600 hover:underline">
+              Login Now!
             </Link>
           </p>
-        </div>
-
-        {/*IMAGE */}
-        <div className="relative hidden xl:block w-full xl:w-1/2">
-          <Image
-            src={image}
-            alt="Login Illustration"
-            fill
-            className="object-cover xl:rounded-tr-2xl xl:rounded-br-2xl"
-          />
         </div>
       </div>
     </section>
